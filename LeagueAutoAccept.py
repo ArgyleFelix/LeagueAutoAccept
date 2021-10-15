@@ -34,7 +34,6 @@ def AutoAccept(ready):
                 picture = pyautogui.locateOnScreen("accept.png", confidence=0.5)
                 if picture != None:
                     saved_mouse_pos = pyautogui.position()
-                    print(current_time, "Match Found!")
                     click(picture.left+70,picture.top+20)
                     print(current_time,  "Match Accepted!\n")
                     win32api.SetCursorPos(saved_mouse_pos)
