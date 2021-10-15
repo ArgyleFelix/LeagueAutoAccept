@@ -4,6 +4,7 @@ import pyautogui
 #from functools import partial
 import time
 import win32api, win32con
+import keyboard
 import os
 import os.path
 
@@ -26,15 +27,17 @@ def AutoAccept(ready):
             print("Auto Accept is Currently Active.\n")
             print('Press "Ctrl + C" to stop the script.\n')
 
-            while True:
+            while keyboard.is_pressed("q") == False:
                 t = time.localtime()
                 current_time = time.strftime("%H:%M:%S:", t)
 
                 picture = pyautogui.locateOnScreen("accept.png", confidence=0.5)
                 if picture != None:
+                    saved_mouse_pos = pyautogui.position()
                     print(current_time, "Match Found!")
                     click(picture.left+70,picture.top+20)
                     print(current_time,  "Match Accepted!\n")
+                    win32api.SetCursorPos(saved_mouse_pos)
                     time.sleep(0.5)
                 else:
                     time.sleep(0.5)
