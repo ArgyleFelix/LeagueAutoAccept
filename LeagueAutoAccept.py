@@ -1,14 +1,11 @@
 from pyautogui import *
 import pyautogui
-#from PIL import ImageGrab
-#from functools import partial
 import time
 import win32api, win32con
 import keyboard
 import os
 import os.path
 
-#ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
 os.system("cls" if os.name == "nt" else "clear")
 
 def click(x,y):
@@ -18,6 +15,8 @@ def click(x,y):
     time.sleep(0.01)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
+print("Currently this script only supports the main monitor.")
+print("Make sure that you game is on the main monitor.\n")
 print('Type "start" to start the Auto Accept.\n')
 
 def AutoAccept(ready):
