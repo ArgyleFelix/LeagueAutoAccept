@@ -30,7 +30,6 @@ def AutoAccept(ready):
             while keyboard.is_pressed("q") == False:
                 t = time.localtime()
                 current_time = time.strftime("%H:%M:%S:", t)
-
                 picture = pyautogui.locateOnScreen("accept.png", confidence=0.5)
                 if picture != None:
                     saved_mouse_pos = pyautogui.position()
@@ -51,7 +50,7 @@ def AutoAccept(ready):
         print("Auto Accept has been Closed.\n")
         pass
 
-if os.path.isfile('accept.png'):
+if os.path.isfile("accept.png"):
     AutoAccept(input())
 else:
     print('"accept.png" is missing. Please make sure to have both files in the same folder.')
