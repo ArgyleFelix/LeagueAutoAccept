@@ -44,6 +44,8 @@ def AutoAccept(ready):
         else:
             os.system("cls" if os.name == "nt" else "clear")
             print("Unknown Command:", ready, "\n")
+            print('Type "start" to start the Auto Accept.')
+            print('Press "Ctrl + C" to stop the script.\n')
             NewInput = input()
             AutoAccept(NewInput)
 
