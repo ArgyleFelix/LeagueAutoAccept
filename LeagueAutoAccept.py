@@ -17,16 +17,19 @@ def click(x,y):
 
 print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
+print("The failsafe key is Numpad 5.")
+print("If you lose control of your mouse you can hold it to close the script.\n")
 print('Type "start" to start the Auto Accept.\n')
 
 def AutoAccept(ready):
     try:
         if ready == "start":
             os.system("cls" if os.name == "nt" else "clear")
-            print("Auto Accept is Currently Active.\n")
+            print("Auto Accept is Currently Active.")
+            print("The failsafe key is Numpad 5.\n")
             print('Press "Ctrl + C" to stop the script.\n')
 
-            while keyboard.is_pressed("q") == False:
+            while keyboard.is_pressed("num 5") == False:
                 t = time.localtime()
                 current_time = time.strftime("%H:%M:%S:", t)
                 picture = pyautogui.locateOnScreen("accept.png", confidence=0.5)
