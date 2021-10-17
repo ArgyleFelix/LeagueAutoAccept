@@ -9,7 +9,6 @@ import os.path
 os.system("cls" if os.name == "nt" else "clear")
 
 def click(x,y):
-    time.sleep(0.01)
     win32api.SetCursorPos((x,y))
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     time.sleep(0.01)
@@ -19,6 +18,7 @@ print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
 print("The failsafe key is Numpad 5.")
 print("If you lose control of your mouse you can hold it to close the script.\n")
+print('Press "Ctrl + C" to stop the script.')
 print('Type "start" to start the Auto Accept.\n')
 
 def AutoAccept(ready):
