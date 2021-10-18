@@ -31,7 +31,7 @@ def AutoAccept(ready):
 
             while keyboard.is_pressed("num 5") == False:
                 t = time.localtime()
-                current_time = time.strftime("%H:%M:%S:", t)
+                current_time = time.strftime("%H:%M:", t)
                 picture = pyautogui.locateOnScreen("accept.png", confidence=0.5)
                 if picture != None:
                     saved_mouse_pos = pyautogui.position()
