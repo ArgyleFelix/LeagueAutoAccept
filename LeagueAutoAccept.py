@@ -20,7 +20,7 @@ def time_converter(sec):
   sec = sec % 60
   hours = mins // 60
   mins = mins % 60
-  print("Program was running for {0}:{1}:{2}".format(int(hours),int(mins),int(sec)))
+  print("Program was running for {0}h:{1}m:{2}s".format(int(hours),int(mins),int(sec)))
 
 print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
