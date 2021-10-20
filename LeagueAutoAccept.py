@@ -6,6 +6,7 @@ import keyboard
 import os
 import os.path
 
+start_time = time.time()
 os.system("cls" if os.name == "nt" else "clear")
 
 def click(x,y):
@@ -13,6 +14,13 @@ def click(x,y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     time.sleep(0.01)
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+
+def time_converter(sec):
+  mins = sec // 60
+  sec = sec % 60
+  hours = mins // 60
+  mins = mins % 60
+  print("Program was running for {0}:{1}:{2}".format(int(hours),int(mins),int(sec)))
 
 print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
@@ -52,6 +60,9 @@ def AutoAccept(ready):
     except KeyboardInterrupt:
         os.system("cls" if os.name == "nt" else "clear")
         print("Auto Accept has been Closed.\n")
+        end_time = time.time()
+        time_lapsed = end_time - start_time
+        time_converter(time_lapsed)
         pass
 
 if os.path.isfile("accept.png"):
