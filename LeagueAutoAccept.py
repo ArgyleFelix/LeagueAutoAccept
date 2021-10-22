@@ -16,11 +16,11 @@ def click(x,y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
 
 def time_converter(sec):
-  mins = sec // 60
-  sec = sec % 60
-  hours = mins // 60
-  mins = mins % 60
-  print("Program was running for {0}h:{1}m:{2}s".format(int(hours),int(mins),int(sec)))
+    mins = sec // 60
+    sec = sec % 60
+    hours = mins // 60
+    mins = mins % 60
+    print("Program was running for {0}h:{1}m:{2}s".format(int(hours),int(mins),int(sec)))
 
 print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
