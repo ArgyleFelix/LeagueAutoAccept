@@ -2,6 +2,7 @@ from pyautogui import *
 import pyautogui
 import time
 import win32api, win32con
+from termcolor import colored
 import keyboard
 import os
 import os.path
@@ -22,6 +23,7 @@ def time_converter(sec):
     mins = mins % 60
     print("Program was running for {0}h:{1}m:{2}s".format(int(hours),int(mins),int(sec)))
 
+print(colored("Auto Accept is Currently Offline.", "red"))
 print("Currently this script only supports the main monitor.")
 print("Make sure that you game is on the main monitor.\n")
 print("The failsafe key is Numpad 5.")
@@ -33,7 +35,7 @@ def AutoAccept(ready):
     try:
         if ready == "start":
             os.system("cls" if os.name == "nt" else "clear")
-            print("Auto Accept is Currently Active.")
+            print(colored("Auto Accept is Currently Active.", "green"))
             print("The failsafe key is Numpad 5.\n")
             print('Press "Ctrl + C" to stop the script.\n')
 
@@ -59,7 +61,7 @@ def AutoAccept(ready):
 
     except KeyboardInterrupt:
         os.system("cls" if os.name == "nt" else "clear")
-        print("Auto Accept has been Closed.\n")
+        print(colored("Auto Accept has been Closed.\n", "red"))
         end_time = time.time()
         time_lapsed = end_time - start_time
         time_converter(time_lapsed)
